@@ -1,0 +1,19 @@
+local lp = game:GetService("Players").LocalPlayer
+
+local RunService = game:GetService("RunService")
+local Poosay =
+   RunService.RenderStepped:Connect(
+   function(v)
+       pcall(
+           function()
+            local Highlight = Instance.new("Highlight")
+            Highlight.FillColor = Color3.fromHSV(tick() % 5 / 5, 1, 1) 
+            Highlight.OutlineColor = Color3.fromHSV(tick() % 5 / 5, 1, 1) 
+            Highlight.FillTransparency = 1
+            Highlight.Parent = lp.Character
+            wait(0.01)
+            Highlight:Destroy()
+           end
+       )
+   end
+)
